@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/carousel.css">
+<link rel="stylesheet" href="css/vkladki.css">
+<link rel="stylesheet" href="css/button.css">
+<link rel="stylesheet" href="css/table.css">
+<style>
+  @font-face {
+   font-family: Scumbria; /* Гарнитура шрифта */
+   src: url(fonts/scumbria.otf); /* Путь к файлу со шрифтом */
+  }
+  h1 {
+   font-family: Scumbrua, 'Scumbria', cursive;
+  }
+  h2 {
+    font-family: Scumbrua, 'Scumbria', cursive;
+  }
+ </style>
+ <style>
+  @font-face {
+   font-family: Gealman; /* Гарнитура шрифта */
+   src: url(fonts/gealman.otf); /* Путь к файлу со шрифтом */
+  }
+  p {
+   font-family: GealMan, 'Gealman-Thin', cursive;
+  }
+ </style>
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Top">^</button>
+  <!--Scroll JS-->
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html"><img src="img/Logo.png" height="52"></a>
+    <a href="index.html#about">Новости</a>
+    <a href="menu.html">Игроки</a>
+    <a href="#politik">Политика</a>
+  </div>
+  <h2><font color="gold"></font></h2>
+
+  <br>
+   <center><font color="green"><h1>Private&Policy</h1></font></center>
+   <!-- Rules  -->
+   <h2><font color="orange">--> Правила поведения в сообществе</font></h2>
+   <p>При вступлении в клуб "CreatonClub" в интернет ресурсе "Brawl Stars", вы соглашаетесь с "правилами поведения в сообществе".
+    Эти правила гласят о том, что при не соблюдении этих правил вы можете быть заблокированы и отстранены от пользования клубом.
+  Правила сообщества запрещают: распространение личных данных других пользователей, обзывательства в сторону любого
+человека, сцены и описании насилия, сцены и описания наготы и сексуального контента. За все ранее перечисленные действия с вашей стороны
+вы можете быть заблокированы, заблокировать вас могут <a href="#admin">люди из этого списка (клик)</a>.<br>Короткий номер этого соглашения: 01.1</p>
+   
+   <h2 id="admin"><font color="orange">-->Принятие в Администрацию</font></h2>
+   <p>Что нужно для того, чтобы вас приняли в администрацию клуба ("ветеран", "вице-президент")? Ниже будут перечисленны
+    все условия: <b>1.</b> Иметь хорошее знание Русского языка, т.е.: иметь образование выше уровня начальной школы, умение писать
+    грамотно и без ошибок; <b>2.</b> Быть участником клуба более 4 дней; <b>3.</b> Возраст: более 11 лет; <b>4.</b> Участвовать в
+    событиях клуба. При соблюдении всех этих правил, вы ВОЗМОЖНО попадёте в ряды администрации нашего клуба. Просим внимательно
+    перечитать данные этого абзаца.<br>Короткий номер этого соглашения: 01.3   </p>
+   
+   
+   
+
+
+
+    <h3 id="admin">Список Администратаров:</h3>
+     <p>Ветераны<br>
+     Вице-президенты<br>
+     Президент (АйВасили)</p>
+     <p><font color="grey"><i>Все пользователи с этими статусами имеют право заблокировать и ограничить доступ к разделу
+      "клуб CreatonClub" в интернет ресурсе "Brawl Stars". Если вас заблокировали не по правилам, напишите жалобу на почту (ниже),
+      или в ЛС Discord (ссылка есть на главной странице снизу)</i>
+     </font></p>
+     
+   
+   <div class="slideshow-container">
+    <h3> Сайт не должен нарушать авторские права. Сайт <font color="red"><b>НИЧЕГО не</b></font> пропагандирует. </h3>
+    <h3>Есть жалобы, грустно<img src="img/pins/Dju-dju-sad.webp" height="40">. Отпраьте заявку на <a href="mailto:ivasily_production@ro.ru">почту (клик)</a>.</h3>
+</body>
+</html> 
