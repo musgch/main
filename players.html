@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/carousel.css">
+<link rel="stylesheet" href="css/vkladki.css">
+<link rel="stylesheet" href="css/button.css">
+<link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Top">^</button>
+  <!--Scroll JS-->
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+    <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html"><img src="img/Logo.png" height="52"></a>
+    <a href="index.html#about">Новости</a>
+    <a href="players.html">Игроки</a>
+    <a href="policy.html">Политика</a>
+  </div>
+  <button class="accordion">Василий[01]</button>
+<div class="panel">
+  <p>SC ID:[IVasily],Ник:[АйВасили] - Основа</p>
+  <p>SC ID:[CheeryLolikPro],Ник:[CheeryLolik] - Твинк</p>
+  <p>Репутация: <img src="img/pins/nice.gif" height="70"> (отлично)</p>
+  <p>Статус: <i>Президент</i></p>
+</div>
+
+<button class="accordion">Тимур[02]</button>
+<div class="panel">
+  <p>SC ID:[timur337],Ник:[🖤Mirage🖤] - Основа</p>
+  <p>Репутация: <img src="img/pins/nice.gif" height="70"> (отлично)</p>
+  <p>Статус: <i>Вице-президент</i></p>
+</div>
+
+<button class="accordion">Мария[03]</button>
+<div class="panel">
+  <p>SC ID:[SolidXexe],Ник:[xexe] - Основа</p>
+  <p>Репутация: <img src="img/pins/good.webp" height="60"> (хорошо)</p>
+  <p>Статус: <i>Игрок</i></p>
+</div>
+
+<button class="accordion">Александр[04]</button>
+<div class="panel">
+  <p>SC ID:[End1zz],Ник:[end1zz] - Основа</p>
+  <p>Репутация: <img src="img/pins/good.webp" height="60"> (хорошо)</p>
+  <p>Статус: <i>Ветеран</i></p>
+</div>
+
+
+
+
+
+<p><em><font color="grey">Список может быть не точен, так как игроки в клубе постоянно прибывают, и уходят. Со временем список может
+  дополняться.
+</font></em></p>
+
