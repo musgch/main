@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Средства связи</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/vkladki.css">
+<link rel="stylesheet" href="css/button.css">
+<link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Top">^</button>
+  <!--Scroll JS-->
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    <!-- Navbar -->
+  <div class="navbar">
+      <a href="index.html"><img src="img/Logo.png" height="52"></a>
+      <a href="index.html#about"><img src="img/gazeta.png" height="40"></a>
+      <a href="players.html"><img src="img/people.png" height="40"></a>
+      <a href="policy.html"><img src="img/policy.png" height="40"></a>
+      <a href="contact.html"><img src="img/contact.png" height="40"></a>
+    </div>
+  <script src="https://yastatic.net/share2/share.js"></script>
+<div class="ya-share2" data-curtain data-shape="round" data-color-scheme="blackwhite" data-limit="0" data-more-button-type="short" data-services="vkontakte,telegram,whatsapp"></div>
+<h2>Контакты</h2>
+<h5><a href="mailto:ivasily_production@ro.ru">Почта</a>(ivasily_production@ro.ru)</h5>
+<h5><a href="https://discordapp.com/users/1187986753211076631/">Discord Президента</a></h5>
+<h5><a href="https://t.me/ivbanan">Telegram Президента</a></h5>
+<h5><a href="https://www.instagram.com/kivasily/profilecard/?igsh=MThic2d4N25lNWs3dg==">Instagram Direct</a></h5>
+
+  
+</body>
+</html> 
+
+
+
