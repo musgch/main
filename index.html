@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Главная: CreatonClub</title>
+  <title>Главная страница</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/vkladki.css">
@@ -67,9 +67,9 @@
       <a href="policy.html"><img src="img/policy.png" height="40"></a
                                                                           <a href="contact.html"><img src="img/contact.png" height="40"></a>
     </div>
-   <center><font color="lavander"><h1>CreatonClub</h1></font></center>
+   <center><font color="lavander"><h1>Главная</h1></font></center>
 <img src="img/main.png" height="200">
-   <h2><font color="blue"><center>События:</center></font></h2>
+   <h2><font color="blue"><center>Новости:</center></font></h2>
 <h3><font color="blue"><h2>Февральский марафон!(скоро запуск)</h2></font></h3>
   <p>Тот, кто первый наберёт
 600 трофеев до
@@ -87,7 +87,17 @@
   <h5>Хотите вступить в клуб или стать ветераном? Пишите:</h5>
 <h5><a href="https://discordapp.com/users/1187986753211076631/">В директ ДС (клик)</a>,<br>но не забывайте о <a href="policy.html">правилах принятия в администрацию (клик)</a></h5>
   
-
+<form action="go.php" method="post" enctype="multipart/form-data">
+<!-- Форма будет отправлять введенные пользователем данные скрипту go.php методом POST -->
+<img src='captcha.php' id='capcha-image'>
+<!-- Сама капча -->
+<a href="javascript:void(0);" onclick="document.getElementById('capcha-image').src='captcha.php?rid=' + Math.random();">Обновить капчу</a>
+<!-- Ссылка на обновление капчи. Запрашиваем у captcha.php случайное изображение.  -->
+<span>Введите капчу:</span>
+<input type="text" name="code">
+<input type="submit" name="go" value="Продолжить">
+<!-- Отправляем данные скрипту-обработчику go.php -->
+</form>
 
 </body>
 </html> 
