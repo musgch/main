@@ -87,17 +87,7 @@
   <h5>Хотите вступить в клуб или стать ветераном? Пишите:</h5>
 <h5><a href="https://discordapp.com/users/1187986753211076631/">В директ ДС (клик)</a>,<br>но не забывайте о <a href="policy.html">правилах принятия в администрацию (клик)</a></h5>
   
-<form action="go.php" method="post" enctype="multipart/form-data">
-<!-- Форма будет отправлять введенные пользователем данные скрипту go.php методом POST -->
-<img src='captcha.php' id='capcha-image'>
-<!-- Сама капча -->
-<a href="javascript:void(0);" onclick="document.getElementById('capcha-image').src='captcha.php?rid=' + Math.random();">Обновить капчу</a>
-<!-- Ссылка на обновление капчи. Запрашиваем у captcha.php случайное изображение.  -->
-<span>Введите капчу:</span>
-<input type="text" name="code">
-<input type="submit" name="go" value="Продолжить">
-<!-- Отправляем данные скрипту-обработчику go.php -->
-</form>
+
 
 </body>
 </html> 
