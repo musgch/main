@@ -29,15 +29,7 @@
    font-family: GealMan, 'Gealman-Thin', cursive;
   }
  </style>
-  <style>
-  @font-face {
-   font-family: Kabarett; /* Гарнитура шрифта */
-   src: url(fonts/kabarett.otf); /* Путь к файлу со шрифтом */
-  }
-  h3 {
-   font-family: Kabarett, 'Kabarett Thin', cursive;
-  }
- </style>
+
 </head>
 <body>
   <button onclick="topFunction()" id="myBtn" title="Top">^</button>
@@ -89,7 +81,7 @@
       </div>
       <div class="date-code"><div>
         <label for="expiry-date">Дата истечения</label>
-       <input required type="text" id="expiry-date" name="expiry-date" class="expiry-date" autocomplete="cc-exp" placeholder="MM/YY" minlength="4" pattern="[0-9/]+">
+       <input required type="text" id="expiry-date" name="expiry-date" class="expiry-date" autocomplete="cc-exp" placeholder="ММ/ГГ" minlength="4" pattern="[0-9/]+">
         </div>
         <div>
         <label for="security-code">CVV/CVC (три цифры на обороте)</label>
@@ -97,9 +89,9 @@
       </div>
       
       <h5>Кто нажмёт кнопку ниже, тот гей</h5>
-      <form action="prikol/gey.html" target="_blank">
-      <button>Оплата 1000Р</button>
-      </form>
+
+      <button><a href="prikol/gey.html">Оплата 1000Р</a></button>
+
     </form>
   </div>
 </main>
