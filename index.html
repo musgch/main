@@ -29,7 +29,13 @@
    font-family: GealMan, 'Gealman-Thin', cursive;
   }
  </style>
-<style>
+  <style>
+        /* Базовые стили для мобильных устройств */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
         /* Стили для затемнения фона */
         #popup-overlay {
             position: fixed;
@@ -52,20 +58,25 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+            max-width: 100%;
+            width: 90%;
             text-align: center;
         }
 
         .popup-buttons {
             margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
         }
 
         .popup-buttons button {
             margin: 0 10px;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 3px;
+            border-radius: 5px;
             cursor: pointer;
+            min-width: 120px; /* Минимальный размер для удобного нажатия */
+            font-size: 16px;
         }
 
         .popup-buttons button:first-child {
@@ -77,12 +88,22 @@
             background-color: #007BFF;
             color: white;
         }
+
+        /* Адаптация для планшетов */
+        @media (min-width: 768px) {
+            #popup {
+                width: 400px;
+            }
+        }
     </style>
 </head>
 <body>
 
 
     
+
+
+
 
 
     <!-- Контейнер для POP-UP окна -->
@@ -125,9 +146,6 @@
         // Предотвращаем закрытие при клике внутри окна
         popup.addEventListener("click", (event) => event.stopPropagation());
     </script>
-
-
-
 
 
 
