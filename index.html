@@ -29,70 +29,107 @@
    font-family: GealMan, 'Gealman-Thin', cursive;
   }
  </style>
-  <style>
-        /* Базовые стили для мобильных устройств */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Стили для затемнения фона */
-        #popup-overlay {
+<style>
+        /* Стили для фона затемнения */
+        .popup-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0; /* Начальная прозрачность для анимации */
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
-        /* Стили для самого окна */
-        #popup {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
+        /* Класс для отображения окна */
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Стили для самого всплывающего окна */
+        .popup-content {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 90%; /* Адаптивная ширина */
+            max-width: 450px; /* Максимальная ширина для больших экранов */
+            transform: scale(0.9); /* Начальный размер для анимации */
+            transition: transform 0.4s ease;
+        }
+
+        /* Анимация появления контента */
+        .popup-overlay.show .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-content h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Контейнер для кнопок */
+        .popup-buttons {
+            display: flex;
+            flex-direction: column; /* Кнопки в столбец на мобильных */
+            gap: 10px; /* Расстояние между кнопками */
+        }
+
+        /* Общие стили для кнопок */
+        .popup-button {
+            padding: 12px 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
-            width: 90%;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
             text-align: center;
         }
 
-        .popup-buttons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-around;
+        .popup-button:hover {
+            background-color: #e0e0e0;
         }
 
-        .popup-buttons button {
-            margin: 0 10px;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            min-width: 120px; /* Минимальный размер для удобного нажатия */
-            font-size: 16px;
+        /* Стили для основной кнопки "Принять" */
+        .popup-button.primary {
+            background-color: #007bff;
+            color: #ffffff;
+            border-color: #007bff;
         }
 
-        .popup-buttons button:first-child {
-            background-color: #4CAF50;
-            color: white;
+        .popup-button.primary:hover {
+            background-color: #0056b3;
         }
 
-        .popup-buttons button:last-child {
-            background-color: #007BFF;
-            color: white;
-        }
+        /* Адаптивность для экранов шире 600px (планшеты и компьютеры) */
+        @media (min-width: 600px) {
+            .popup-buttons {
+                flex-direction: row; /* Кнопки в ряд */
+                justify-content: center; /* Центрирование кнопок */
+            }
 
-        /* Адаптация для планшетов */
-        @media (min-width: 768px) {
-            #popup {
-                width: 400px;
+            .popup-button {
+                width: auto;
             }
         }
     </style>
@@ -100,53 +137,43 @@
 <body>
 
 
-    
 
 
 
 
 
-    <!-- Контейнер для POP-UP окна -->
-    <div id="popup-overlay">
-        <div id="popup">
-            <p>Для продолжения использования сайта необходимо принять пользовательское соглашение.</p>
+
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup-content">
             <div class="popup-buttons">
-                <button onclick="hidePopup()">Принять</button>
-                <button onclick="showAgreement()">Прочитать соглашение</button>
+                <a href="https://musgch.github.io/main/policy.html" target="_blank" class="popup-button">Прочитать соглашение</a>
+                <button id="accept-button" class="popup-button primary">Принять</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Получаем элементы
-        const popupOverlay = document.getElementById("popup-overlay");
-        const popup = document.getElementById("popup");
+        // Ждем, пока весь контент страницы загрузится
+        document.addEventListener("DOMContentLoaded", function() {
 
-        // Функция показа окна
-        function showPopup() {
-            popupOverlay.style.display = "block";
-        }
+            const popupOverlay = document.getElementById('popup-overlay');
+            const acceptButton = document.getElementById('accept-button');
 
-        // Функция скрытия окна
-        function hidePopup() {
-            popupOverlay.style.display = "none";
-        }
+            // Показываем всплывающее окно сразу после загрузки страницы
+            // Добавляем небольшую задержку для плавности
+            setTimeout(() => {
+                popupOverlay.classList.add('show');
+            }, 500); // 0.5 секунды задержки
 
-        // Функция открытия соглашения
-        function showAgreement() {
-            window.open("policy.html", "_blank");
-        }
+            // Функция для закрытия окна
+            const closePopup = () => {
+                popupOverlay.classList.remove('show');
+            };
 
-        // Показываем окно при загрузке страницы
-        window.addEventListener('load', showPopup);
-
-        // Закрываем окно при клике на затемненный фон
-        popupOverlay.addEventListener("click", hidePopup);
-
-        // Предотвращаем закрытие при клике внутри окна
-        popup.addEventListener("click", (event) => event.stopPropagation());
+            // Закрываем окно по клику на кнопку "Принять"
+            acceptButton.addEventListener('click', closePopup);
+        });
     </script>
-
 
 
   
