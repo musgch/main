@@ -10,16 +10,41 @@
 <link rel="stylesheet" href="css/carousel.css">
 <link rel="stylesheet" href="css/portret.css">
 <link rel="shortcut icon" href="img/Logo.png" />
+  
   <style>
-        /* CSS-код для стилизации и адаптивности */
+  @font-face {
+   font-family: Gealman; /* Гарнитура шрифта */
+   src: url(fonts/gealman.otf); /* Путь к файлу со шрифтом */
+  }
+  p {
+   font-family: GealMan, 'Gealman-Thin', cursive;
+  }
+ </style>
+<style>
+  @font-face {
+   font-family: Gealman; /* Гарнитура шрифта */
+   src: url(fonts/gealman.otf); /* Путь к файлу со шрифтом */
+  }
+  h4 {
+   font-family: GealMan, 'Gealman-Thin', cursive;
+  }
+ </style>
+<style>
+        /* CSS-код для формы с уникальными классами */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7f6;
             margin: 0;
             display: flex;
-            justify-content: center; /* Центрирует форму по горизонтали */
-            align-items: flex-end;   /* Прижимает форму к низу страницы */
+            flex-direction: column; /* Элементы идут сверху вниз */
+            justify-content: flex-end; /* Прижимает последний элемент (форму) к низу */
             min-height: 100vh;
+        }
+
+        .main-content {
+            flex: 1; /* Основной контент занимает все доступное место */
+            padding: 20px;
+            /* Здесь могут быть твои стили для nav-бара, div-ов и т.д. */
         }
 
         .feedback-section {
@@ -28,6 +53,7 @@
             justify-content: center;
             padding: 20px;
             box-sizing: border-box;
+            margin-top: auto; /* Прижимает секцию к низу */
         }
 
         .feedback-form {
@@ -59,19 +85,19 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
 
-        h2 {
+        .feedback-form-title {
             text-align: center;
             color: #333;
             margin-bottom: 30px;
         }
 
-        .input-group {
+        .feedback-input-group {
             position: relative;
             margin-bottom: 30px;
         }
 
-        .input-group input,
-        .input-group textarea {
+        .feedback-input-group input,
+        .feedback-input-group textarea {
             width: 100%;
             padding: 10px;
             border: none;
@@ -82,12 +108,12 @@
             transition: border-bottom-color 0.3s ease;
         }
 
-        .input-group input:focus,
-        .input-group textarea:focus {
+        .feedback-input-group input:focus,
+        .feedback-input-group textarea:focus {
             border-bottom-color: #5d5dff;
         }
 
-        .input-group label {
+        .feedback-input-group label {
             position: absolute;
             top: 10px;
             left: 10px;
@@ -96,17 +122,17 @@
             transition: all 0.3s ease;
         }
 
-        .input-group input:focus + label,
-        .input-group input:not(:placeholder-shown) + label,
-        .input-group textarea:focus + label,
-        .input-group textarea:not(:placeholder-shown) + label {
+        .feedback-input-group input:focus + label,
+        .feedback-input-group input:not(:placeholder-shown) + label,
+        .feedback-input-group textarea:focus + label,
+        .feedback-input-group textarea:not(:placeholder-shown) + label {
             top: -15px;
             left: 0;
             font-size: 12px;
             color: #5d5dff;
         }
 
-        .submit-btn {
+        .feedback-submit-btn {
             width: 100%;
             padding: 12px;
             background-color: #5d5dff;
@@ -118,12 +144,12 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .submit-btn:hover {
+        .feedback-submit-btn:hover {
             background-color: #4a4ade;
             transform: translateY(-2px);
         }
 
-        .submit-btn:active {
+        .feedback-submit-btn:active {
             transform: translateY(0);
         }
 
@@ -140,36 +166,20 @@
                 border-radius: 8px;
             }
 
-            h2 {
+            .feedback-form-title {
                 font-size: 1.5rem;
             }
         }
     </style>
-  <style>
-  @font-face {
-   font-family: Gealman; /* Гарнитура шрифта */
-   src: url(fonts/gealman.otf); /* Путь к файлу со шрифтом */
-  }
-  p {
-   font-family: GealMan, 'Gealman-Thin', cursive;
-  }
- </style>
-<style>
-  @font-face {
-   font-family: Gealman; /* Гарнитура шрифта */
-   src: url(fonts/gealman.otf); /* Путь к файлу со шрифтом */
-  }
-  h4 {
-   font-family: GealMan, 'Gealman-Thin', cursive;
-  }
- </style>
-
 </head>
 
+<body> <div class="main-content">
 
 
 
-<body>
+
+
+
   <button onclick="topFunction()" id="myBtn" title="Top">^</button>
   <!--Scroll JS-->
   <script>
@@ -205,22 +215,22 @@
 <h5><a href="mailto:infochill@ro.ru">Почта InfoChill (infochill@ro.ru)</a>(по вопросам сайта)</h5>
   
 
-    <section class="feedback-section">
-        <form id="contactForm" action="https://formsubmit.co/infochill@ro.ru" method="POST" class="feedback-form">
-            <h2>Свяжитесь с нами</h2>
-            <div class="input-group">
+  <section class="feedback-section">
+        <form id="contactForm" action="https://formsubmit.co/your@email.com" method="POST" class="feedback-form">
+            <h2 class="feedback-form-title">Свяжитесь с нами</h2>
+            <div class="feedback-input-group">
                 <input type="text" name="name" id="name" required placeholder=" ">
                 <label for="name">Ваше имя</label>
             </div>
-            <div class="input-group">
+            <div class="feedback-input-group">
                 <input type="email" name="email" id="email" required placeholder=" ">
                 <label for="email">Ваш Email</label>
             </div>
-            <div class="input-group">
+            <div class="feedback-input-group">
                 <textarea name="message" id="message" rows="4" required placeholder=" "></textarea>
                 <label for="message">Ваше сообщение</label>
             </div>
-            <button type="submit" class="submit-btn">Отправить</button>
+            <button type="submit" class="feedback-submit-btn">Отправить</button>
             <div id="formStatus"></div>
         </form>
     </section>
@@ -263,9 +273,10 @@
 
 
 
-  
-</body>
+
+         
+</body>  </div>
 </html> 
 
-
+  
 
